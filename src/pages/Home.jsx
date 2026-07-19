@@ -160,7 +160,7 @@ export default function Home() {
             <h1 className="text-3xl sm:text-4xl lg:text-[56px] font-normal leading-[1.1] tracking-tight mb-5 max-w-xl">
               Decide where your distributions go.<br />Compound your INDEX holdings.
             </h1>
-            <p className="text-white/80 text-base sm:text-lg mb-10 max-w-md leading-relaxed">
+            <p className="text-white/80 text-base sm:text-lg mb-5 sm:mb-10 max-w-md leading-relaxed">
               2% of all converted yield goes towards the INDEX Reserve.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -188,7 +188,7 @@ export default function Home() {
       </section>
 
       {/* Process */}
-      <section className="py-24 px-6 bg-gray-50">
+      <section className="py-12 lg:py-24 px-5 sm:px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-black text-gray-900 mb-2">How The Manager Works</h2>
           <p className="text-gray-500 mb-12 text-sm">A yield layer built on top of The Index protocol.</p>
@@ -208,9 +208,9 @@ export default function Home() {
       </section>
 
       {/* Vaults preview */}
-      <section className="py-24 px-6">
+      <section className="py-12 lg:py-24 px-5 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
             <div>
               <h2 className="text-3xl font-black text-gray-900 mb-2">Choose Your Strategy</h2>
               <p className="text-gray-500 text-sm">Deposit once. The Manager handles the rest.</p>
@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* CTA banner */}
-      <section className="py-20 px-6">
+      <section className="py-10 lg:py-20 px-5 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="hero-gradient rounded-3xl px-10 py-14 text-center text-white">
             <h2 className="text-4xl sm:text-5xl font-black mb-4 tracking-tight">
