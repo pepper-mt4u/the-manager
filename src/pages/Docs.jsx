@@ -35,21 +35,25 @@ const sections = [
       },
       {
         q: 'What is the fee?',
-        a: '1% of all yield converted through The Manager goes to the treasury for $INDEX buybacks and burns. There is no performance fee, no management fee, and no withdrawal fee.',
+        a: '2% of all converted yield goes to the INDEX Reserve, where it is used to accumulate $INDEX for the protocol. There is no performance fee, no management fee, and no withdrawal fee.',
       },
     ],
   },
   {
-    id: 'treasury',
-    title: 'Treasury & Burns',
+    id: 'index-reserve',
+    title: 'INDEX Reserve',
     content: [
       {
-        q: 'What happens to the 1% fee?',
-        a: 'It accumulates in the treasury. Periodically, the treasury uses these funds to buy $INDEX on the open market and burn them permanently (send to 0x000…dEaD). This creates continuous buy pressure and reduces supply.',
+        q: 'What happens to the 2% fee?',
+        a: 'When a vault converts tokenized stock distributions, 2% of the gross value is withheld and used to purchase $INDEX via Rialto on Robinhood Chain. That $INDEX is held in the INDEX Reserve contract, accumulating over time.',
       },
       {
-        q: 'Is the burn verifiable on-chain?',
-        a: 'Yes. All buyback and burn transactions are executed on Robinhood Chain (Arbitrum Orbit) and are fully verifiable. The Treasury page lists every burn with the transaction hash.',
+        q: 'Why accumulate INDEX instead of burning it?',
+        a: 'Accumulating $INDEX in the reserve aligns The Manager protocol\'s economics with The Index protocol. The reserve grows as vault activity grows, creating a protocol-owned position in the underlying asset.',
+      },
+      {
+        q: 'Is the reserve verifiable on-chain?',
+        a: 'Yes. All reserve accumulation transactions are executed on Robinhood Chain and are fully verifiable. The INDEX Reserve page tracks every addition with the transaction hash.',
       },
     ],
   },
