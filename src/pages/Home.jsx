@@ -84,12 +84,10 @@ function HeroCard() {
           <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">{totalLabel}</p>
           <p className="text-base font-bold text-gray-900">$38.57</p>
         </div>
-        {!isCompound && (
-          <div className="flex justify-between items-center mt-1">
-            <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">NVDA Accumulated</p>
-            <p className="text-sm font-bold" style={{ color: '#76b900' }}>0.38 NVDA</p>
-          </div>
-        )}
+        <div className="flex justify-between items-center mt-1" style={{ opacity: isCompound ? 0 : 1, transition: 'opacity 0.35s ease' }}>
+          <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">NVDA Accumulated</p>
+          <p className="text-sm font-bold" style={{ color: '#76b900' }}>0.38 NVDA</p>
+        </div>
       </div>
     </div>
   )
