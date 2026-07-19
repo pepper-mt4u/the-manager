@@ -124,7 +124,7 @@ const processSteps = [
 
 const vaultPreviews = [
   {
-    name: 'INDEX Compound Vault',
+    name: 'INDEX Vault',
     target: '$INDEX',
     desc: 'All distributions auto-swapped back into $INDEX for maximum compounding.',
     apy: 'TBA',
@@ -138,7 +138,7 @@ const vaultPreviews = [
     desc: 'All distributions auto-swapped into SpaceX tokenized stock.',
     apy: 'TBA',
     tvl: '$0',
-    tag: 'CONCENTRATE',
+    tag: 'AUTO-SWAPPED',
     tagColor: 'bg-blue-100 text-blue-700',
   },
   {
@@ -147,7 +147,7 @@ const vaultPreviews = [
     desc: 'All distributions auto-swapped into NVIDIA tokenized stock.',
     apy: 'TBA',
     tvl: '$0',
-    tag: 'CONCENTRATE',
+    tag: 'AUTO-SWAPPED',
     tagColor: 'bg-blue-100 text-blue-700',
   },
 ]
