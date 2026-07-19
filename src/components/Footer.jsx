@@ -20,7 +20,7 @@ export default function Footer() {
           <span className="font-bold text-sm tracking-widest text-gray-900 uppercase">The Manager</span>
         </div>
 
-        <div className="flex items-center gap-8 text-xs font-semibold tracking-widest text-gray-400">
+        <div className="flex items-center gap-5 text-xs font-semibold tracking-widest text-gray-400">
           <Link to="/vaults" className="hover:text-gray-700 transition-colors">VAULTS</Link>
           <Link to="/portfolio" className="hover:text-gray-700 transition-colors">PORTFOLIO</Link>
           <Link to="/index-reserve" className="hover:text-gray-700 transition-colors">INDEX RESERVE</Link>
@@ -29,9 +29,11 @@ export default function Footer() {
             href="https://x.com/TheManagerFi"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-gray-700 transition-colors"
+            className="text-gray-400 hover:text-gray-700 transition-colors"
           >
-            X / TWITTER
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
           </a>
         </div>
 
