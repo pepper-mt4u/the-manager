@@ -2,7 +2,7 @@ const reserveHistory = []
 
 export default function IndexReserve() {
   return (
-    <div className="pt-28 pb-24 px-6">
+    <div className="pt-28 pb-24 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
 
         <div className="mb-8">

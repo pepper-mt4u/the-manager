@@ -32,7 +32,7 @@ function HeroCard() {
   const totalLabel  = isCompound ? 'TOTAL COMPOUNDED' : 'TOTAL CONCENTRATED'
 
   return (
-    <div className="bg-white rounded-3xl card-shadow overflow-hidden w-[480px]">
+    <div className="bg-white rounded-3xl card-shadow overflow-hidden w-full lg:w-[480px]">
       <div className="px-7 py-5 border-b border-gray-100 flex items-center gap-3">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
           <rect x="0" y="0" width="13" height="13" rx="2" fill="#4A7BC4" />
@@ -154,10 +154,10 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="hero-gradient min-h-screen pt-28 pb-20 px-6 flex items-center">
-        <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
+      <section className="hero-gradient min-h-screen pt-28 pb-16 px-5 flex items-center overflow-x-hidden">
+        <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
           <div className="flex-1 text-white">
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-normal leading-[1.08] tracking-tight mb-6 max-w-xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-[56px] font-normal leading-[1.1] tracking-tight mb-5 max-w-xl">
               Decide where your distributions go.<br />Compound your INDEX holdings.
             </h1>
             <p className="text-white/80 text-base sm:text-lg mb-10 max-w-md leading-relaxed">
@@ -181,7 +181,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-shrink-0 card-entrance">
+          <div className="w-full lg:flex-shrink-0 lg:w-auto card-entrance">
             <HeroCard />
           </div>
         </div>

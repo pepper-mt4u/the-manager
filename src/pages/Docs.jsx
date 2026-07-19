@@ -75,7 +75,7 @@ const sections = [
 
 export default function Docs() {
   return (
-    <div className="pt-28 pb-24 px-6">
+    <div className="pt-28 pb-24 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto">
         <div className="mb-12">
           <h1 className="text-4xl font-black text-gray-900 mb-3">Documentation</h1>

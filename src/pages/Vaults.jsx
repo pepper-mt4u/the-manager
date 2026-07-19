@@ -203,7 +203,7 @@ const vaults = [
 
 export default function Vaults() {
   return (
-    <div className="pt-28 pb-24 px-6">
+    <div className="pt-28 pb-24 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
 
         <div className="mb-8">
@@ -232,7 +232,7 @@ export default function Vaults() {
           ))}
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {vaults.map((v) => (
             <div key={v.ticker} className={`border-2 rounded-2xl p-6 hover:shadow-md transition-shadow ${v.accent} bg-white`}>
               <div className="flex items-center justify-between mb-4">

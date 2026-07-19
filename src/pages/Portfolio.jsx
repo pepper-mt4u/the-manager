@@ -53,7 +53,7 @@ function ConnectPrompt() {
             <div className="px-6 py-4 border-b border-gray-100">
               <h3 className="font-bold text-gray-900">Your Positions</h3>
             </div>
-            <table className="w-full text-sm">
+            <div className="overflow-x-auto"><table className="w-full text-sm">
               <thead>
                 <tr className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase border-b border-gray-100">
                   <th className="text-left px-6 py-3">Vault</th>
@@ -76,14 +76,14 @@ function ConnectPrompt() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden">
             <div className="px-6 py-4 border-b border-gray-100">
               <h3 className="font-bold text-gray-900">Compounding History</h3>
             </div>
-            <table className="w-full text-sm">
+            <div className="overflow-x-auto"><table className="w-full text-sm">
               <thead>
                 <tr className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase border-b border-gray-100">
                   <th className="text-left px-6 py-3">Date</th>
@@ -104,7 +104,7 @@ function ConnectPrompt() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@ function ConnectPrompt() {
 
 export default function Portfolio() {
   return (
-    <div className="pt-28 pb-24 px-6">
+    <div className="pt-28 pb-24 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         <div className="mb-10">
           <h1 className="text-4xl font-black text-gray-900 mb-3">Portfolio</h1>

@@ -30,6 +30,17 @@
   animation-delay: 0.15s;
 }
 
+/* On mobile: no skew, no overflow issues */
+@media (max-width: 1023px) {
+  .card-entrance {
+    animation: none;
+    transform: none;
+  }
+  .card-entrance > * {
+    transform: none;
+  }
+}
+
 @layer utilities {
   .hero-gradient {
     background: linear-gradient(160deg, #fce4de 0%, #f8c0ac 40%, #f4a898 75%, #f09888 100%);
