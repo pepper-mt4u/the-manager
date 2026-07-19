@@ -161,7 +161,6 @@ export default function Navbar() {
         >
           <div style={{
             display: 'flex', alignItems: 'center', gap: '6px',
-            border: '1px solid #e5e7eb', borderRadius: '8px',
             padding: '5px 10px', whiteSpace: 'nowrap',
           }}>
             <span style={{ fontSize: '11px', fontWeight: 600, color: '#6b7280' }}>Next Conversion:</span>

@@ -36,7 +36,14 @@ export default function Footer() {
         </div>
 
         <p className="text-xs text-gray-400">
-          Built on Robinhood Chain · Powered by The Index
+          Built on{' '}
+          <a href="https://robinhood.com/robinhood-chain" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors underline underline-offset-2">
+            Robinhood Chain
+          </a>
+          {' '}· Powered by{' '}
+          <a href="https://theindex.finance" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors underline underline-offset-2">
+            The Index
+          </a>
         </p>
       </div>
     </footer>

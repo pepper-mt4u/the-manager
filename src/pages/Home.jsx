@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 const stocks = [
   { ticker: 'NVDA', name: 'NVIDIA',    amount: '+$9.34',  color: '#76b900' },
@@ -10,22 +11,46 @@ const stocks = [
 ]
 
 function HeroCard() {
+  const [mode, setMode] = useState('compound')
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setVisible(false)
+      setTimeout(() => {
+        setMode(m => m === 'compound' ? 'concentrate' : 'compound')
+        setVisible(true)
+      }, 450)
+    }, 5000)
+    return () => clearInterval(id)
+  }, [])
+
+  const isCompound = mode === 'compound'
+  const target      = isCompound ? 'INDEX' : 'NVDA'
+  const targetColor = isCompound ? '#e07060' : '#76b900'
+  const label       = isCompound ? 'Auto-Compounding' : 'Auto-Concentrating'
+  const totalLabel  = isCompound ? 'TOTAL COMPOUNDED' : 'TOTAL CONCENTRATED'
+
   return (
-    <div className="bg-white rounded-3xl card-shadow overflow-hidden w-[440px]">
-      <div className="px-6 py-4 border-b border-gray-100 flex items-center gap-3">
-        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+    <div className="bg-white rounded-3xl card-shadow overflow-hidden w-[480px]">
+      <div className="px-7 py-5 border-b border-gray-100 flex items-center gap-3">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
           <rect x="0" y="0" width="13" height="13" rx="2" fill="#4A7BC4" />
           <rect x="15" y="0" width="13" height="13" rx="2" fill="#d0d0d0" />
           <rect x="0" y="15" width="13" height="13" rx="2" fill="#d0d0d0" />
           <rect x="15" y="15" width="13" height="13" rx="2" fill="#4A7BC4" />
         </svg>
-        <span className="text-sm font-bold tracking-widest text-gray-800 uppercase">The Manager</span>
+        <span className="text-base font-bold tracking-widest text-gray-800 uppercase">The Manager</span>
       </div>
 
-      <div className="px-6 pt-4 pb-2">
-        <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Your Distributions</p>
+      <div
+        className="px-7 pt-5 pb-2"
+        style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease' }}
+      >
+        <p className="text-[11px] font-semibold tracking-widest text-gray-400 uppercase mb-1">{label}</p>
         <p className="text-xs text-gray-400 mb-4">
-          Auto-routing → <span className="text-coral-600 font-bold">$INDEX</span>
+          All distributions →{' '}
+          <span className="font-bold" style={{ color: targetColor }}>${target}</span>
         </p>
         <div className="space-y-3">
           {stocks.map((s) => (
@@ -44,22 +69,27 @@ function HeroCard() {
               </div>
               <div className="text-right">
                 <p className="text-sm font-bold text-gray-900">{s.amount}</p>
-                <p className="text-xs text-coral-500 font-semibold">→ INDEX</p>
+                <p className="text-xs font-semibold" style={{ color: targetColor }}>→ {target}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="mx-6 my-4 p-3 bg-gray-50 rounded-2xl">
-        <div className="flex justify-between items-center mb-1">
-          <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">Total Compounded</p>
+      <div
+        className="mx-7 my-4 p-4 bg-gray-50 rounded-2xl"
+        style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease' }}
+      >
+        <div className="flex justify-between items-center">
+          <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">{totalLabel}</p>
           <p className="text-base font-bold text-gray-900">$38.57</p>
         </div>
-        <div className="flex justify-between items-center">
-          <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">Index Burned</p>
-          <p className="text-sm font-bold text-coral-600">0.38 INDEX</p>
-        </div>
+        {!isCompound && (
+          <div className="flex justify-between items-center mt-1">
+            <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">NVDA Accumulated</p>
+            <p className="text-sm font-bold" style={{ color: '#76b900' }}>0.38 NVDA</p>
+          </div>
+        )}
       </div>
     </div>
   )
@@ -68,25 +98,25 @@ function HeroCard() {
 const processSteps = [
   {
     n: '01',
-    title: 'Hold $INDEX on Robinhood Chain',
+    title: 'Hold $INDEX on the Robinhood Chain',
     body: 'The Index distributes tokenized stocks to all $INDEX holders each cycle.',
     tag: 'THE INDEX',
   },
   {
     n: '02',
-    title: 'Deposit into a Manager Vault',
+    title: 'Deposit $INDEX into a Manager Vault',
     body: 'Choose your strategy: compound into $INDEX or concentrate into a single stock.',
     tag: 'VAULTS',
   },
   {
     n: '03',
-    title: 'The Manager auto-converts',
+    title: 'The Manager auto-converts rewards',
     body: 'When distributions arrive, The Manager swaps them into your chosen asset automatically.',
     tag: 'AUTO-COMPOUND',
   },
   {
     n: '04',
-    title: 'INDEX Reserve grows',
+    title: '$INDEX Protocol Reserve',
     body: '2% of all converted yield is used to purchase $INDEX for the protocol reserve, building a growing treasury.',
     tag: 'INDEX RESERVE',
   },
@@ -105,7 +135,7 @@ const vaultPreviews = [
   {
     name: 'SpaceX Vault',
     target: '$SPCX',
-    desc: 'All distributions concentrated into SpaceX tokenized stock.',
+    desc: 'All distributions auto-swapped into SpaceX tokenized stock.',
     apy: 'TBA',
     tvl: '$0',
     tag: 'CONCENTRATE',
@@ -114,7 +144,7 @@ const vaultPreviews = [
   {
     name: 'NVIDIA Vault',
     target: '$NVDA',
-    desc: 'All distributions concentrated into NVIDIA tokenized stock.',
+    desc: 'All distributions auto-swapped into NVIDIA tokenized stock.',
     apy: 'TBA',
     tvl: '$0',
     tag: 'CONCENTRATE',
@@ -127,9 +157,9 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="hero-gradient min-h-screen pt-28 pb-20 px-6 flex items-center">
-        <div className="max-w-5xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
+        <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
           <div className="flex-1 text-white">
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-normal leading-[1.1] tracking-tight mb-6 max-w-lg">
+            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-normal leading-[1.08] tracking-tight mb-6 max-w-xl">
               Decide where your distributions go.<br />Compound your INDEX holdings.
             </h1>
             <p className="text-white/80 text-base sm:text-lg mb-10 max-w-md leading-relaxed">
@@ -137,7 +167,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://theindex.finance"
+                href="https://theindex.finance/#/swap"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-gray-900 font-bold text-sm tracking-wider px-6 py-3.5 rounded-xl hover:bg-gray-100 transition-colors flex items-center gap-2"
