@@ -122,7 +122,7 @@ const processSteps = [
 const vaultPreviews = [
   {
     name: 'INDEX Vault',
-    target: '+INDEX',
+    target: '+$INDEX',
     desc: 'All tokenized stock distributions are automatically swapped back into $INDEX, rapidly compounding rewards.',
     apy: 'TBA',
     tvl: '$0',
