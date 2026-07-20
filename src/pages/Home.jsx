@@ -158,7 +158,7 @@ export default function Home() {
           <div className="flex-1 text-white">
             <h1
               className="text-3xl sm:text-4xl lg:text-[56px] font-normal tracking-tight mb-5 max-w-xl"
-              style={{ lineHeight: 1.35 }}
+              style={{ lineHeight: 1.22 }}
             >
               Decide where your distributions go.<br />Compound your INDEX holdings.
             </h1>

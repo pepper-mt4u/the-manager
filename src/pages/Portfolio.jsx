@@ -1,10 +1,10 @@
 const mockPositions = [
-  { vault: 'INDEX Compound Vault', target: '$INDEX', deposited: '10,000', value: '$—', compounded: '$—', since: '—' },
+  { vault: 'INDEX Vault', target: '$INDEX', deposited: '10,000', value: '$—', compounded: '$—', since: '—' },
   { vault: 'SpaceX Vault', target: '$SPCX', deposited: '5,000', value: '$—', compounded: '$—', since: '—' },
 ]
 
 const mockHistory = [
-  { date: '—', vault: 'INDEX Compound Vault', received: '—', converted: '—', output: '—' },
+  { date: '—', vault: 'INDEX Vault', received: '—', converted: '—', output: '—' },
   { date: '—', vault: 'SpaceX Vault', received: '—', converted: '—', output: '—' },
 ]
 
@@ -68,7 +68,7 @@ function ConnectPrompt() {
                 {mockPositions.map((p, i) => (
                   <tr key={i} className="border-b border-gray-50">
                     <td className="px-6 py-4 font-semibold text-gray-900">{p.vault}</td>
-                    <td className="px-6 py-4 font-bold text-coral-600">{p.target}</td>
+                    <td className="px-6 py-4 font-bold text-green-500">{p.target}</td>
                     <td className="px-6 py-4 text-gray-600">{p.deposited}</td>
                     <td className="px-6 py-4 text-gray-600">{p.value}</td>
                     <td className="px-6 py-4 text-gray-600">{p.compounded}</td>
@@ -100,7 +100,7 @@ function ConnectPrompt() {
                     <td className="px-6 py-4 font-semibold text-gray-900">{h.vault}</td>
                     <td className="px-6 py-4 text-gray-600">{h.received}</td>
                     <td className="px-6 py-4 text-gray-600">{h.converted}</td>
-                    <td className="px-6 py-4 font-bold text-coral-600">{h.output}</td>
+                    <td className="px-6 py-4 font-bold text-green-500">{h.output}</td>
                   </tr>
                 ))}
               </tbody>
