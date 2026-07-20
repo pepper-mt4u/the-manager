@@ -5,15 +5,15 @@ const sections = [
     content: [
       {
         q: 'What is The Manager?',
-        a: 'The Manager is a yield optimisation protocol built on Robinhood Chain. It sits on top of The Index protocol and automatically converts the tokenized stock distributions that $INDEX holders earn into either more $INDEX or a single tokenized stock of your choice.',
+        a: 'The Manager is a yield optimization protocol built on the Robinhood Chain. It optimizes the tokenized stocks rewards that are distributed (airdropped) by The Index protocol to wallets holding at least 10,000 $INDEX tokens.',
       },
       {
         q: 'What is The Index?',
-        a: 'The Index is a protocol on Robinhood Chain where holding $INDEX earns you tokenized stock distributions. A 3% ETH fee is collected on all $INDEX trades, used to purchase a basket of 18+ tokenized stocks, which are then airdropped to eligible $INDEX holders. Learn more at theindex.finance.',
+        a: 'The Index is a tokenized stock dividend protocol on the Robinhood Chain. It takes a 3% ETH fee from all $INDEX trades and uses this ETH to buy a basket of tokenized stocks which are then distributed to wallets holding at least 10,000 $INDEX.',
       },
       {
         q: 'Who is The Manager for?',
-        a: '$INDEX holders who want to actively manage their distributions instead of letting them sit idle. Whether you want to maximise your $INDEX position (compound vault) or concentrate into a conviction stock (e.g. all into SPCX), The Manager automates it.',
+        a: 'The Manager is primarily for $INDEX holders who want to either compound their $INDEX holdings or automatically convert their tokenized stock distributions into other stocks or stablecoins (specifically USDG).',
       },
     ],
   },
@@ -23,19 +23,19 @@ const sections = [
     content: [
       {
         q: 'How do vaults work?',
-        a: 'You deposit your $INDEX into a vault. The Manager monitors The Index distribution cycle. When tokenized stocks are distributed, The Manager automatically swaps them into your chosen target asset using Uniswap v4 on Robinhood Chain. You receive the compounded asset; your $INDEX remains in the vault.',
+        a: 'Deposit a minimum of 10,000 $INDEX tokens into a vault. Every 24 hours, The Manager protocol automatically swaps the tokenized stocks distributed to the vault by The Index protocol into the asset the vault is for (e.g. into SPCX).',
       },
       {
         q: 'What vaults are available?',
-        a: 'At launch: the INDEX Compound Vault (converts all to $INDEX) and several concentration vaults (SPCX, NVDA, AAPL, AMZN, GOOGL). More vaults will be added based on demand and available liquidity on Robinhood Chain.',
+        a: 'At launch, vaults will support the INDEX token, the USDG stablecoin, and all tokenized stocks supported by The Index. More vaults will be added in the future.',
       },
       {
         q: 'Can I change vaults?',
-        a: 'Yes. You can withdraw your $INDEX from one vault and deposit into another at any time. There is no lockup period.',
+        a: 'Yes. You can withdraw your $INDEX tokens from a vault at any time and deposit into a different vault. There is no lock up period.',
       },
       {
         q: 'What is the fee?',
-        a: '2% of all converted yield goes to the INDEX Reserve, where it is used to accumulate $INDEX for the protocol. There is no performance fee, no management fee, and no withdrawal fee.',
+        a: 'The Manager protocol takes 2% of all tokenized stock distributions to vaults as a fee.',
       },
     ],
   },
@@ -45,15 +45,11 @@ const sections = [
     content: [
       {
         q: 'What happens to the 2% fee?',
-        a: 'When a vault converts tokenized stock distributions, 2% of the gross value is withheld and used to purchase $INDEX via Rialto on Robinhood Chain. That $INDEX is held in the INDEX Reserve contract, accumulating over time.',
-      },
-      {
-        q: 'Why accumulate INDEX instead of burning it?',
-        a: 'Accumulating $INDEX in the reserve aligns The Manager protocol\'s economics with The Index protocol. The reserve grows as vault activity grows, creating a protocol-owned position in the underlying asset.',
+        a: 'The Manager protocol purchases INDEX tokens using the 2% fee.',
       },
       {
         q: 'Is the reserve verifiable on-chain?',
-        a: 'Yes. All reserve accumulation transactions are executed on Robinhood Chain and are fully verifiable. The INDEX Reserve page tracks every addition with the transaction hash.',
+        a: 'Yes. All INDEX tokens and tokenized stocks held by The Manager protocol reserve can be seen on The Reserve page.',
       },
     ],
   },
@@ -63,11 +59,11 @@ const sections = [
     content: [
       {
         q: 'Where are the contracts deployed?',
-        a: 'Contracts will be deployed on Robinhood Chain (an Arbitrum Orbit L2). Addresses will be published here once the protocol launches. The contracts are adapted from audited Beefy Finance vault contracts, adjusted for The Index distribution model.',
+        a: 'All smart contracts are deployed on the Robinhood Chain. All relevant addresses will be published here once The Manager protocol has fully launched.',
       },
       {
         q: 'Have the contracts been audited?',
-        a: 'Audit is planned before mainnet launch. Details will be published here.',
+        a: 'The smart contracts have not been formally audited, but they were written and/or compiled by a former blockchain security researcher (by someone who used to audit blockchain smart contracts for a living).',
       },
     ],
   },
