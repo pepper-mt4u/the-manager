@@ -25,7 +25,7 @@ function ConnectPrompt() {
       </p>
       <button
         className="bg-gray-900 text-white text-xs font-bold tracking-widest px-8 py-3.5 rounded-xl hover:bg-gray-700 transition-colors"
-        onClick={() => alert('Wallet connection coming soon.')}
+        onClick={() => alert('Wallet connection coming soon')}
       >
         CONNECT WALLET
       </button>
@@ -112,9 +112,16 @@ function ConnectPrompt() {
   )
 }
 
+import { Helmet } from 'react-helmet-async'
+
 export default function Portfolio() {
   return (
     <div className="pt-28 pb-24 px-4 sm:px-6">
+      <Helmet>
+        <title>Portfolio — Track Your Vault Positions | The Manager</title>
+        <meta name="description" content="View your active Manager vault positions, compounding history, and total yield earned across all vaults on the Robinhood Chain." />
+        <link rel="canonical" href="https://the-manager-fawn.vercel.app/portfolio" />
+      </Helmet>
       <div className="max-w-5xl mx-auto">
         <div className="mb-10">
           <h1 className="text-4xl font-black text-gray-900 mb-3">Portfolio</h1>

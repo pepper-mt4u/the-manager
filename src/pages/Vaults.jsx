@@ -201,13 +201,20 @@ const vaults = [
   },
 ]
 
+import { Helmet } from 'react-helmet-async'
+
 export default function Vaults() {
   return (
     <div className="pt-28 pb-24 px-4 sm:px-6">
+      <Helmet>
+        <title>Vaults — Automated Tokenized Stock Yield on Robinhood Chain | The Manager</title>
+        <meta name="description" content="Choose a Manager vault to automatically convert your $INDEX tokenized stock (RWA) distributions into INDEX, USDG, or 18 individual stocks. 20 vaults. Daily compounding. No manual work." />
+        <link rel="canonical" href="https://the-manager-fawn.vercel.app/vaults" />
+      </Helmet>
       <div className="max-w-5xl mx-auto">
 
         <div className="mb-8">
-          <h1 className="text-4xl font-black text-gray-900 mb-3">Vaults</h1>
+          <h1 className="text-4xl font-black text-gray-900 mb-3">Vaults — Automated Tokenized Stock Yield</h1>
           <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
             Deposit $INDEX tokens and decide where your tokenized stock distributions go. Vaults will automatically convert your rewards into the token of your choosing every 24 hours.
           </p>
@@ -263,7 +270,7 @@ export default function Vaults() {
 
               <button
                 className="w-full bg-gray-900 text-white text-xs font-bold tracking-widest py-3 rounded-xl hover:bg-gray-700 transition-colors"
-                onClick={() => alert('Connect your wallet to enter a vault. Smart contracts coming soon.')}
+                onClick={() => alert('Wallet connection coming soon')}
               >
                 CONNECT WALLET
               </button>

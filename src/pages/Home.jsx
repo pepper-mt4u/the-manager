@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 const stocks = [
   { ticker: 'NVDA', name: 'NVIDIA',    amount: '+$9.34',  color: '#76b900' },
@@ -152,6 +153,12 @@ const vaultPreviews = [
 export default function Home() {
   return (
     <>
+      <Helmet>
+        <title>The Manager — Automate Your $INDEX Yield on Robinhood Chain</title>
+        <meta name="description" content="The Manager auto-converts tokenized stock (RWA) distributions from The Index protocol into your chosen asset — INDEX, USDG, or individual stocks. Deposit once. The Manager handles the rest." />
+        <link rel="canonical" href="https://the-manager-fawn.vercel.app/" />
+      </Helmet>
+
       {/* Hero */}
       <section className="hero-gradient min-h-screen pt-28 pb-16 px-5 flex items-center overflow-x-hidden">
         <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
@@ -163,7 +170,7 @@ export default function Home() {
               Decide where your distributions go.<br />Compound your INDEX holdings.
             </h1>
             <p className="text-white/80 text-base sm:text-lg mb-5 sm:mb-10 max-w-md leading-relaxed">
-              2% of all converted yield goes towards the INDEX Reserve.
+              Auto-convert your tokenized stock (RWA) distributions into any asset you choose. 2% of all converted yield goes towards the INDEX Reserve.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link

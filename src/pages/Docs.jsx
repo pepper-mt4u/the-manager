@@ -1,3 +1,92 @@
+import { Helmet } from 'react-helmet-async'
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is The Manager?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Manager is a yield optimization protocol built on the Robinhood Chain. It optimizes the tokenized stocks rewards that are distributed (airdropped) by The Index protocol to wallets holding at least 10,000 $INDEX tokens.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is The Index?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Index is a tokenized stock dividend protocol on the Robinhood Chain. It takes a 3% ETH fee from all $INDEX trades on the Uniswap v4 INDEX/ETH pool and uses this ETH to buy a basket of tokenized stocks which are then distributed to wallets holding at least 10,000 $INDEX.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Who is The Manager for?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Manager is primarily for $INDEX holders who want to either compound their $INDEX holdings or automatically convert their tokenized stock distributions into other stocks or stablecoins (specifically USDG).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do vaults work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Deposit a minimum of 10,000 $INDEX tokens into a vault. Every 24 hours, The Manager protocol automatically swaps the tokenized stocks distributed to the vault by The Index protocol into the asset the vault is for.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What vaults are available?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'At launch, vaults will support the INDEX token, the USDG stablecoin, and all tokenized stocks supported by The Index. More vaults will be added in the future.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I change vaults?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. You can withdraw your $INDEX tokens from a vault at any time and deposit them into a different vault. There is no lock up period.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the fee?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Manager protocol takes 2% of all tokenized stock distributions to vaults as a fee.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens to the 2% fee?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Manager protocol purchases INDEX tokens using the 2% fee.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the reserve verifiable on-chain?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. All INDEX tokens and tokenized stocks held by The Manager protocol reserve can be seen on The Reserve page.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Have the contracts been audited?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The smart contracts have not been formally audited, but they were written and/or compiled by a former blockchain security researcher (by someone who used to audit blockchain smart contracts for a living).',
+      },
+    },
+  ],
+}
+
 const sections = [
   {
     id: 'overview',
@@ -72,9 +161,15 @@ const sections = [
 export default function Docs() {
   return (
     <div className="pt-28 pb-24 px-4 sm:px-6">
+      <Helmet>
+        <title>Documentation — How The Manager Works | The Manager</title>
+        <meta name="description" content="Learn how The Manager protocol works: vaults, auto-compounding, the INDEX Reserve, and smart contract details. Full FAQ for $INDEX holders on the Robinhood Chain." />
+        <link rel="canonical" href="https://the-manager-fawn.vercel.app/docs" />
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
       <div className="max-w-3xl mx-auto">
         <div className="mb-12">
-          <h1 className="text-4xl font-black text-gray-900 mb-3">Documentation</h1>
+          <h1 className="text-4xl font-black text-gray-900 mb-3">Documentation — How The Manager Works</h1>
           <p className="text-gray-500 text-base leading-relaxed">
             Everything you need to understand The Manager protocol.
           </p>
@@ -102,7 +197,13 @@ export default function Docs() {
                 {section.content.map((item) => (
                   <div key={item.q}>
                     <h3 className="font-bold text-gray-900 mb-2">{item.q}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+                    {item.q === 'What is The Index?' ? (
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        <a href="https://theindex.finance" target="_blank" rel="noopener noreferrer" className="text-coral-600 hover:underline">The Index</a> is a tokenized stock dividend protocol on the Robinhood Chain. It takes a 3% ETH fee from all $INDEX trades on the Uniswap v4 INDEX/ETH pool and uses this ETH to buy a basket of tokenized stocks which are then distributed to wallets holding at least 10,000 $INDEX.
+                      </p>
+                    ) : (
+                      <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+                    )}
                   </div>
                 ))}
               </div>

@@ -1,19 +1,26 @@
+import { Helmet } from 'react-helmet-async'
+
 const reserveHistory = []
 
 export default function IndexReserve() {
   return (
     <div className="pt-28 pb-24 px-4 sm:px-6">
+      <Helmet>
+        <title>INDEX Reserve — Protocol Treasury | The Manager</title>
+        <meta name="description" content="2% of all Manager vault conversions fund the INDEX Reserve. Track on-chain accumulation of $INDEX by The Manager protocol treasury on the Robinhood Chain." />
+        <link rel="canonical" href="https://the-manager-fawn.vercel.app/index-reserve" />
+      </Helmet>
       <div className="max-w-5xl mx-auto">
 
         <div className="mb-8">
-          <h1 className="text-4xl font-black text-gray-900 mb-3">INDEX Reserve</h1>
+          <h1 className="text-4xl font-black text-gray-900 mb-3">INDEX Reserve — Protocol Treasury</h1>
           <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
             2% of all vault conversions are allocated to the INDEX reserve. The Manager accumulates INDEX over time to align incentives with The Index.
           </p>
         </div>
 
         <div className="p-5 bg-coral-50 rounded-2xl border border-coral-100 mb-8">
-          <h3 className="font-bold text-coral-900 mb-3 text-sm">How the INDEX Reserve works</h3>
+          <h2 className="font-bold text-coral-900 mb-3 text-sm">How the INDEX Reserve works</h2>
           <div className="space-y-2 text-sm text-coral-800 leading-relaxed">
             <p>
               <strong>Step 1:</strong> When a vault converts tokenized stock distributions to another token, 2% of the gross value is withheld as a protocol fee.
