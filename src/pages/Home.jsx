@@ -10,6 +10,9 @@ const stocks = [
   { ticker: 'SPCX', name: 'SpaceX',   amount: '+$3.93',  color: '#005288' },
 ]
 
+const GREEN = '#22c55e'
+const NVDA_GREEN = '#76b900'
+
 function HeroCard() {
   const [mode, setMode] = useState('compound')
   const [visible, setVisible] = useState(true)
@@ -25,11 +28,13 @@ function HeroCard() {
     return () => clearInterval(id)
   }, [])
 
-  const isCompound = mode === 'compound'
-  const target      = isCompound ? 'INDEX' : 'NVDA'
-  const targetColor = isCompound ? '#e07060' : '#76b900'
-  const label       = isCompound ? 'Auto-Compounding' : 'Auto-Concentrating'
-  const totalLabel  = isCompound ? 'TOTAL COMPOUNDED' : 'TOTAL CONCENTRATED'
+  const isCompound   = mode === 'compound'
+  const target       = isCompound ? 'INDEX' : 'NVDA'
+  const targetColor  = isCompound ? GREEN : NVDA_GREEN
+  const label        = isCompound ? 'Auto-Compounding' : 'Auto-Concentrating'
+  const totalLabel   = isCompound ? 'TOTAL COMPOUNDED' : 'TOTAL CONCENTRATED'
+  const accumLabel   = isCompound ? 'INDEX Accumulated' : 'NVDA Accumulated'
+  const accumValue   = isCompound ? '1,247 INDEX' : '0.38 NVDA'
 
   return (
     <div className="bg-white rounded-3xl card-shadow overflow-hidden w-full lg:w-[480px]">
@@ -43,10 +48,7 @@ function HeroCard() {
         <span className="text-base font-bold tracking-widest text-gray-800 uppercase">The Manager</span>
       </div>
 
-      <div
-        className="px-7 pt-5 pb-2"
-        style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease' }}
-      >
+      <div className="px-7 pt-5 pb-2" style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease' }}>
         <p className="text-[11px] font-semibold tracking-widest text-gray-400 uppercase mb-1">{label}</p>
         <p className="text-xs text-gray-400 mb-4">
           All distributions →{' '}
@@ -76,17 +78,14 @@ function HeroCard() {
         </div>
       </div>
 
-      <div
-        className="mx-7 my-4 p-4 bg-gray-50 rounded-2xl"
-        style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease' }}
-      >
+      <div className="mx-7 my-4 p-4 bg-gray-50 rounded-2xl" style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease' }}>
         <div className="flex justify-between items-center">
           <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">{totalLabel}</p>
           <p className="text-base font-bold text-gray-900">$38.57</p>
         </div>
-        <div className="flex justify-between items-center mt-1" style={{ opacity: isCompound ? 0 : 1, transition: 'opacity 0.35s ease' }}>
-          <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">NVDA Accumulated</p>
-          <p className="text-sm font-bold" style={{ color: '#76b900' }}>0.38 NVDA</p>
+        <div className="flex justify-between items-center mt-1">
+          <p className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">{accumLabel}</p>
+          <p className="text-sm font-bold" style={{ color: GREEN }}>{accumValue}</p>
         </div>
       </div>
     </div>
@@ -96,26 +95,26 @@ function HeroCard() {
 const processSteps = [
   {
     n: '01',
-    title: 'Hold $INDEX on the Robinhood Chain',
-    body: 'The Index distributes tokenized stocks to all $INDEX holders each cycle.',
+    title: 'Buy $INDEX on the Robinhood Chain',
+    body: 'The Index protocol distributes (airdrops) tokenized stocks to wallets holding at least 10,000 $INDEX every 15 minutes.',
     tag: 'THE INDEX',
   },
   {
     n: '02',
     title: 'Deposit $INDEX into a Manager Vault',
-    body: 'Choose your strategy: compound into $INDEX or concentrate into a single stock.',
+    body: 'Choose your strategy: compound into $INDEX or concentrate into a single stock. 10,000 $INDEX minimum.',
     tag: 'VAULTS',
   },
   {
     n: '03',
-    title: 'The Manager auto-converts rewards',
-    body: 'When distributions arrive, The Manager swaps them into your chosen asset automatically.',
+    title: 'When tokenized stock distributions arrive,',
+    body: 'The Manager automatically converts all of your received tokenized stocks into your chosen target asset.',
     tag: 'AUTO-COMPOUND',
   },
   {
     n: '04',
     title: '$INDEX Protocol Reserve',
-    body: '2% of all converted yield is used to purchase $INDEX for the protocol reserve, building a growing treasury.',
+    body: null,
     tag: 'INDEX RESERVE',
   },
 ]
@@ -123,8 +122,8 @@ const processSteps = [
 const vaultPreviews = [
   {
     name: 'INDEX Vault',
-    target: '$INDEX',
-    desc: 'All distributions auto-swapped back into $INDEX for maximum compounding.',
+    target: '+INDEX',
+    desc: 'All tokenized stock distributions are automatically swapped back into $INDEX, rapidly compounding rewards.',
     apy: 'TBA',
     tvl: '$0',
     tag: 'COMPOUND',
@@ -132,8 +131,8 @@ const vaultPreviews = [
   },
   {
     name: 'SpaceX Vault',
-    target: '$SPCX',
-    desc: 'All distributions auto-swapped into SpaceX tokenized stock.',
+    target: '+SPCX',
+    desc: 'All tokenized stock distributions are automatically swapped into tokenized SpaceX stock on the Robinhood layer 2.',
     apy: 'TBA',
     tvl: '$0',
     tag: 'AUTO-SWAPPED',
@@ -141,8 +140,8 @@ const vaultPreviews = [
   },
   {
     name: 'NVIDIA Vault',
-    target: '$NVDA',
-    desc: 'All distributions auto-swapped into NVIDIA tokenized stock.',
+    target: '+NVDA',
+    desc: 'All tokenized stock distributions are automatically swapped into tokenized NVIDIA stock on the Robinhood layer 2.',
     apy: 'TBA',
     tvl: '$0',
     tag: 'AUTO-SWAPPED',
@@ -157,27 +156,30 @@ export default function Home() {
       <section className="hero-gradient min-h-screen pt-28 pb-16 px-5 flex items-center overflow-x-hidden">
         <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
           <div className="flex-1 text-white">
-            <h1 className="text-3xl sm:text-4xl lg:text-[56px] font-normal leading-[1.25] tracking-tight mb-5 max-w-xl">
+            <h1
+              className="text-3xl sm:text-4xl lg:text-[56px] font-normal tracking-tight mb-5 max-w-xl"
+              style={{ lineHeight: 1.35 }}
+            >
               Decide where your distributions go.<br />Compound your INDEX holdings.
             </h1>
             <p className="text-white/80 text-base sm:text-lg mb-5 sm:mb-10 max-w-md leading-relaxed">
               2% of all converted yield goes towards the INDEX Reserve.
             </p>
             <div className="flex flex-wrap gap-4">
+              <Link
+                to="/vaults"
+                className="bg-white text-gray-900 font-bold text-sm tracking-wider px-6 py-3.5 rounded-xl hover:bg-gray-100 transition-colors"
+              >
+                SEE VAULTS
+              </Link>
               <a
                 href="https://theindex.finance/#/swap"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-gray-900 font-bold text-sm tracking-wider px-6 py-3.5 rounded-xl hover:bg-gray-100 transition-colors flex items-center gap-2"
+                className="bg-white text-gray-900 font-bold text-sm tracking-wider px-6 py-3.5 rounded-xl hover:bg-gray-100 transition-colors"
               >
                 BUY $INDEX →
               </a>
-              <Link
-                to="/vaults"
-                className="border border-white/50 text-white font-bold text-sm tracking-wider px-6 py-3.5 rounded-xl hover:bg-white/10 transition-colors"
-              >
-                SEE VAULTS
-              </Link>
             </div>
           </div>
 
@@ -197,7 +199,9 @@ export default function Home() {
               <div key={step.n} className="bg-white rounded-2xl p-7 border border-gray-100">
                 <span className="text-3xl font-black text-gray-200 block mb-3">{step.n}</span>
                 <h3 className="font-bold text-gray-900 text-base mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-4">{step.body}</p>
+                {step.body && (
+                  <p className="text-sm text-gray-500 leading-relaxed mb-4">{step.body}</p>
+                )}
                 <span className="inline-block text-[10px] font-bold tracking-widest text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
                   {step.tag}
                 </span>
@@ -215,24 +219,21 @@ export default function Home() {
               <h2 className="text-3xl font-black text-gray-900 mb-2">Choose Your Strategy</h2>
               <p className="text-gray-500 text-sm">Deposit once. The Manager handles the rest.</p>
             </div>
-            <Link
-              to="/vaults"
-              className="text-xs font-bold tracking-widest text-coral-600 hover:text-coral-700 transition-colors"
-            >
+            <Link to="/vaults" className="text-xs font-bold tracking-widest text-coral-600 hover:text-coral-700 transition-colors">
               ALL VAULTS →
             </Link>
           </div>
 
           <div className="grid sm:grid-cols-3 gap-5">
             {vaultPreviews.map((v) => (
-              <div key={v.name} className="border border-gray-100 rounded-2xl p-6 hover:border-coral-200 transition-colors group">
+              <div key={v.name} className="border border-gray-100 rounded-2xl p-6 hover:border-green-200 transition-colors">
                 <div className="flex items-center justify-between mb-4">
                   <span className={`text-[10px] font-bold tracking-widest px-2.5 py-1 rounded-full ${v.tagColor}`}>
                     {v.tag}
                   </span>
                 </div>
                 <h3 className="font-bold text-gray-900 text-base mb-1">{v.name}</h3>
-                <p className="text-[11px] font-bold text-coral-600 mb-3 tracking-wide">→ {v.target}</p>
+                <p className="text-[11px] font-bold mb-3 tracking-wide" style={{ color: GREEN }}>{v.target}</p>
                 <p className="text-sm text-gray-500 leading-relaxed mb-6">{v.desc}</p>
                 <div className="flex justify-between text-xs text-gray-400 border-t border-gray-100 pt-4">
                   <span>TVL <strong className="text-gray-700">{v.tvl}</strong></span>
@@ -259,7 +260,7 @@ export default function Home() {
                 to="/vaults"
                 className="bg-white text-gray-900 font-bold text-sm tracking-wider px-7 py-3.5 rounded-xl hover:bg-gray-100 transition-colors"
               >
-                ENTER A VAULT →
+                GO TO VAULTS →
               </Link>
               <Link
                 to="/docs"

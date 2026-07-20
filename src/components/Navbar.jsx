@@ -180,8 +180,15 @@ export default function Navbar() {
             flexShrink: 0,
           }}
         >
-          {/* Countdown — 2 lines */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', lineHeight: 1.25 }}>
+          {/* Countdown — desktop: single line, uppercase, nav-link style */}
+          <div className="hidden lg:flex items-center gap-1.5">
+            <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', color: '#9ca3af', whiteSpace: 'nowrap' }}>NEXT CONVERSION:</span>
+            <span style={{ fontSize: '11px', fontWeight: 700, color: '#111827', fontFamily: 'monospace' }}>
+              <Countdown />
+            </span>
+          </div>
+          {/* Countdown — mobile: 2 lines */}
+          <div className="flex lg:hidden flex-col items-end" style={{ lineHeight: 1.25 }}>
             <span style={{ fontSize: '10px', fontWeight: 600, color: '#6b7280', whiteSpace: 'nowrap' }}>Next Conversion:</span>
             <span style={{ fontSize: '11px', fontWeight: 700, color: '#111827', fontFamily: 'monospace' }}>
               <Countdown />
@@ -212,11 +219,11 @@ export default function Navbar() {
             <XIcon />
           </a>
 
-          {/* Hamburger — mobile only */}
+          {/* Hamburger — mobile only (no display in inline style so lg:hidden works) */}
           <button
             className="lg:hidden"
             onClick={() => setMobileMenuOpen(o => !o)}
-            style={{ color: '#6b7280', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: '2px' }}
+            style={{ color: '#6b7280', background: 'none', border: 'none', cursor: 'pointer', padding: '2px', lineHeight: 0 }}
             aria-label="Menu"
           >
             {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
