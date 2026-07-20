@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://the-manager-fawn.vercel.app/sitemap.xml
+Sitemap: https://www.themanager.finance/sitemap.xml

@@ -156,7 +156,7 @@ export default function Home() {
       <Helmet>
         <title>The Manager — Automate Your $INDEX Yield on Robinhood Chain</title>
         <meta name="description" content="The Manager auto-converts tokenized stock (RWA) distributions from The Index protocol into your chosen asset — INDEX, USDG, or individual stocks. Deposit once. The Manager handles the rest." />
-        <link rel="canonical" href="https://the-manager-fawn.vercel.app/" />
+        <link rel="canonical" href="https://www.themanager.finance/" />
       </Helmet>
 
       {/* Hero */}

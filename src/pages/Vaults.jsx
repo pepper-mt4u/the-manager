@@ -209,7 +209,7 @@ export default function Vaults() {
       <Helmet>
         <title>Vaults — Automated Tokenized Stock Yield on Robinhood Chain | The Manager</title>
         <meta name="description" content="Choose a Manager vault to automatically convert your $INDEX tokenized stock (RWA) distributions into INDEX, USDG, or 18 individual stocks. 20 vaults. Daily compounding. No manual work." />
-        <link rel="canonical" href="https://the-manager-fawn.vercel.app/vaults" />
+        <link rel="canonical" href="https://www.themanager.finance/vaults" />
       </Helmet>
       <div className="max-w-5xl mx-auto">
 

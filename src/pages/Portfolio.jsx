@@ -120,7 +120,7 @@ export default function Portfolio() {
       <Helmet>
         <title>Portfolio — Track Your Vault Positions | The Manager</title>
         <meta name="description" content="View your active Manager vault positions, compounding history, and total yield earned across all vaults on the Robinhood Chain." />
-        <link rel="canonical" href="https://the-manager-fawn.vercel.app/portfolio" />
+        <link rel="canonical" href="https://www.themanager.finance/portfolio" />
       </Helmet>
       <div className="max-w-5xl mx-auto">
         <div className="mb-10">

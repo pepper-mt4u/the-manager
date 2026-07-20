@@ -8,7 +8,7 @@ export default function IndexReserve() {
       <Helmet>
         <title>INDEX Reserve — Protocol Treasury | The Manager</title>
         <meta name="description" content="2% of all Manager vault conversions fund the INDEX Reserve. Track on-chain accumulation of $INDEX by The Manager protocol treasury on the Robinhood Chain." />
-        <link rel="canonical" href="https://the-manager-fawn.vercel.app/index-reserve" />
+        <link rel="canonical" href="https://www.themanager.finance/index-reserve" />
       </Helmet>
       <div className="max-w-5xl mx-auto">
 

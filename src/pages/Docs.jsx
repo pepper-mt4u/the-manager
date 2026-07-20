@@ -164,7 +164,7 @@ export default function Docs() {
       <Helmet>
         <title>Documentation — How The Manager Works | The Manager</title>
         <meta name="description" content="Learn how The Manager protocol works: vaults, auto-compounding, the INDEX Reserve, and smart contract details. Full FAQ for $INDEX holders on the Robinhood Chain." />
-        <link rel="canonical" href="https://the-manager-fawn.vercel.app/docs" />
+        <link rel="canonical" href="https://www.themanager.finance/docs" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <div className="max-w-3xl mx-auto">
