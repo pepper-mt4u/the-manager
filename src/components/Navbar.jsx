@@ -214,7 +214,7 @@ export default function Navbar() {
               padding: '7px 12px', borderRadius: '8px', border: 'none',
               cursor: 'pointer', whiteSpace: 'nowrap', flexShrink: 0,
             }}
-            onClick={() => alert('Wallet connection coming soon')}
+            onClick={() => alert('Wallet connection coming soon.')}
           >
             CONNECT
           </button>

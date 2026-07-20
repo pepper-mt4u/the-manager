@@ -270,7 +270,7 @@ export default function Vaults() {
 
               <button
                 className="w-full bg-gray-900 text-white text-xs font-bold tracking-widest py-3 rounded-xl hover:bg-gray-700 transition-colors"
-                onClick={() => alert('Wallet connection coming soon')}
+                onClick={() => alert('Wallet connection coming soon.')}
               >
                 CONNECT WALLET
               </button>

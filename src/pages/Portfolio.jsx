@@ -25,7 +25,7 @@ function ConnectPrompt() {
       </p>
       <button
         className="bg-gray-900 text-white text-xs font-bold tracking-widest px-8 py-3.5 rounded-xl hover:bg-gray-700 transition-colors"
-        onClick={() => alert('Wallet connection coming soon')}
+        onClick={() => alert('Wallet connection coming soon.')}
       >
         CONNECT WALLET
       </button>
