@@ -157,7 +157,7 @@ export default function Home() {
       <section className="hero-gradient min-h-screen pt-28 pb-16 px-5 flex items-center overflow-x-hidden">
         <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
           <div className="flex-1 text-white">
-            <h1 className="text-3xl sm:text-4xl lg:text-[56px] font-normal leading-[1.1] tracking-tight mb-5 max-w-xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-[56px] font-normal leading-[1.25] tracking-tight mb-5 max-w-xl">
               Decide where your distributions go.<br />Compound your INDEX holdings.
             </h1>
             <p className="text-white/80 text-base sm:text-lg mb-5 sm:mb-10 max-w-md leading-relaxed">
