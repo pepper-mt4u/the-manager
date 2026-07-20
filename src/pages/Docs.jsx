@@ -9,7 +9,7 @@ const sections = [
       },
       {
         q: 'What is The Index?',
-        a: 'The Index is a tokenized stock dividend protocol on the Robinhood Chain. It takes a 3% ETH fee from all $INDEX trades and uses this ETH to buy a basket of tokenized stocks which are then distributed to wallets holding at least 10,000 $INDEX.',
+        a: 'The Index is a tokenized stock dividend protocol on the Robinhood Chain. It takes a 3% ETH fee from all $INDEX trades on the Uniswap v4 INDEX/ETH pool and uses this ETH to buy a basket of tokenized stocks which are then distributed to wallets holding at least 10,000 $INDEX.',
       },
       {
         q: 'Who is The Manager for?',
@@ -23,7 +23,7 @@ const sections = [
     content: [
       {
         q: 'How do vaults work?',
-        a: 'Deposit a minimum of 10,000 $INDEX tokens into a vault. Every 24 hours, The Manager protocol automatically swaps the tokenized stocks distributed to the vault by The Index protocol into the asset the vault is for (e.g. into SPCX).',
+        a: 'Deposit a minimum of 10,000 $INDEX tokens into a vault. Every 24 hours, The Manager protocol automatically swaps the tokenized stocks distributed to the vault by The Index protocol into the asset the vault is for (e.g. into SPCX for the SpaceX Vault).',
       },
       {
         q: 'What vaults are available?',
@@ -31,7 +31,7 @@ const sections = [
       },
       {
         q: 'Can I change vaults?',
-        a: 'Yes. You can withdraw your $INDEX tokens from a vault at any time and deposit into a different vault. There is no lock up period.',
+        a: 'Yes. You can withdraw your $INDEX tokens from a vault at any time and deposit them into a different vault. There is no lock up period.',
       },
       {
         q: 'What is the fee?',

@@ -215,7 +215,7 @@ export default function Vaults() {
 
         <div className="p-5 bg-coral-50 rounded-2xl border border-coral-100 mb-8">
           <p className="text-sm text-coral-800 font-medium leading-relaxed">
-            <strong>How vaults work:</strong> Deposit your $INDEX tokens. The Manager protocol monitors the tokenized stocks distributed to $INDEX holders by The Index protocol. When tokenized stocks are received by the vault you deposited your $INDEX tokens to, the vault automatically swaps these tokenized stocks into the asset you chose (e.g. into USDG for the USDG Vault) every 24 hours. The Manager takes a 2% fee from each automatic swap. <strong>Note: you must deposit a minimum of 10,000 $INDEX to receive tokenized stock distributions from The Index protocol.</strong>
+            <strong>How vaults work:</strong> Deposit your $INDEX tokens. The Manager protocol monitors the tokenized stocks distributed to $INDEX holders by The Index protocol. When tokenized stocks are received by the vault you deposited your $INDEX tokens to, the vault automatically swaps these tokenized stocks into the asset you chose (e.g. into USDG for the USDG Vault) every 24 hours. The Manager takes a 2% fee from each automatic swap (2% from the tokenized stocks being converted, NOT from the $INDEX tokens you deposited). <strong>Note: you must deposit a minimum of 10,000 $INDEX to receive tokenized stock distributions from The Index protocol.</strong>
           </p>
         </div>
 
