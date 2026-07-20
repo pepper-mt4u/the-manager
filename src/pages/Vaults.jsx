@@ -3,7 +3,7 @@ const vaults = [
     ticker: 'INDEX',
     name: 'INDEX Vault',
     company: 'The Index',
-    target: '$INDEX',
+    target: '+INDEX',
     desc: 'All tokenized stock distributions are automatically swapped back into $INDEX, rapidly compounding rewards.',
     tag: 'COMPOUND',
     tagColor: 'bg-coral-100 text-coral-700',
@@ -13,9 +13,9 @@ const vaults = [
     ticker: 'USDG',
     name: 'USDG Stable Vault',
     company: 'USD on Robinhood Chain',
-    target: '$USDG',
+    target: '+USDG',
     desc: 'All tokenized stock distributions are automatically swapped into USDG, the native stablecoin of the Robinhood layer 2.',
-    tag: 'STABLE',
+    tag: 'EARN',
     tagColor: 'bg-green-50 text-green-700',
     accent: 'border-green-100',
   },
@@ -23,7 +23,7 @@ const vaults = [
     ticker: 'AAPL',
     name: 'Apple Vault',
     company: 'Apple Inc.',
-    target: '$AAPL',
+    target: '+AAPL',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Apple stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -33,7 +33,7 @@ const vaults = [
     ticker: 'AMD',
     name: 'AMD Vault',
     company: 'AMD',
-    target: '$AMD',
+    target: '+AMD',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized AMD stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -43,7 +43,7 @@ const vaults = [
     ticker: 'AMZN',
     name: 'Amazon Vault',
     company: 'Amazon',
-    target: '$AMZN',
+    target: '+AMZN',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Amazon stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -53,7 +53,7 @@ const vaults = [
     ticker: 'BE',
     name: 'Bloom Energy Vault',
     company: 'Bloom Energy',
-    target: '$BE',
+    target: '+BE',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Bloom Energy stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -63,7 +63,7 @@ const vaults = [
     ticker: 'COIN',
     name: 'Coinbase Vault',
     company: 'Coinbase',
-    target: '$COIN',
+    target: '+COIN',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Coinbase stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -73,7 +73,7 @@ const vaults = [
     ticker: 'CRWV',
     name: 'CoreWeave Vault',
     company: 'CoreWeave',
-    target: '$CRWV',
+    target: '+CRWV',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized CoreWeave stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -83,7 +83,7 @@ const vaults = [
     ticker: 'GOOGL',
     name: 'Alphabet Vault',
     company: 'Alphabet Class A',
-    target: '$GOOGL',
+    target: '+GOOGL',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Alphabet stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -93,7 +93,7 @@ const vaults = [
     ticker: 'INTC',
     name: 'Intel Vault',
     company: 'Intel',
-    target: '$INTC',
+    target: '+INTC',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Intel stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -103,7 +103,7 @@ const vaults = [
     ticker: 'META',
     name: 'Meta Vault',
     company: 'Meta Platforms',
-    target: '$META',
+    target: '+META',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Meta Platforms stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -113,7 +113,7 @@ const vaults = [
     ticker: 'MSFT',
     name: 'Microsoft Vault',
     company: 'Microsoft',
-    target: '$MSFT',
+    target: '+MSFT',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Microsoft stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -123,7 +123,7 @@ const vaults = [
     ticker: 'MU',
     name: 'Micron Vault',
     company: 'Micron Technology',
-    target: '$MU',
+    target: '+MU',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Micron Technology stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -133,7 +133,7 @@ const vaults = [
     ticker: 'NVDA',
     name: 'NVIDIA Vault',
     company: 'NVIDIA',
-    target: '$NVDA',
+    target: '+NVDA',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized NVIDIA stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -143,7 +143,7 @@ const vaults = [
     ticker: 'ORCL',
     name: 'Oracle Vault',
     company: 'Oracle',
-    target: '$ORCL',
+    target: '+ORCL',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Oracle stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -153,7 +153,7 @@ const vaults = [
     ticker: 'PLTR',
     name: 'Palantir Vault',
     company: 'Palantir Technologies',
-    target: '$PLTR',
+    target: '+PLTR',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Palantir Technologies stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -163,7 +163,7 @@ const vaults = [
     ticker: 'SNDK',
     name: 'Sandisk Vault',
     company: 'Sandisk Corporation',
-    target: '$SNDK',
+    target: '+SNDK',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Sandisk stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -173,7 +173,7 @@ const vaults = [
     ticker: 'SPCX',
     name: 'SpaceX Vault',
     company: 'Space Exploration Technologies',
-    target: '$SPCX',
+    target: '+SPCX',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized SpaceX stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -183,7 +183,7 @@ const vaults = [
     ticker: 'TSLA',
     name: 'Tesla Vault',
     company: 'Tesla',
-    target: '$TSLA',
+    target: '+TSLA',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized Tesla stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -193,7 +193,7 @@ const vaults = [
     ticker: 'USAR',
     name: 'USA Rare Earth Vault',
     company: 'USA Rare Earth',
-    target: '$USAR',
+    target: '+USAR',
     desc: 'All tokenized stock distributions are automatically swapped into tokenized USA Rare Earth stock on the Robinhood layer 2.',
     tag: 'CONCENTRATE',
     tagColor: 'bg-blue-50 text-blue-700',
@@ -214,8 +214,8 @@ export default function Vaults() {
         </div>
 
         <div className="p-5 bg-coral-50 rounded-2xl border border-coral-100 mb-8">
-          <p className="text-sm text-coral-800 font-medium">
-            <strong>How vaults work:</strong> Deposit your $INDEX. Manager monitors The Index distributions each cycle. When stocks arrive, they are automatically swapped into your chosen target asset. A 2% fee on each conversion goes towards the INDEX Reserve.
+          <p className="text-sm text-coral-800 font-medium leading-relaxed">
+            <strong>How vaults work:</strong> Deposit your $INDEX tokens. The Manager protocol monitors the tokenized stocks distributed to $INDEX holders by The Index protocol. When tokenized stocks are received by the vault you deposited your $INDEX tokens to, the vault automatically swaps these tokenized stocks into the asset you chose (e.g. into USDG for the USDG Vault) every 24 hours. The Manager takes a 2% fee from each automatic swap. <strong>Note: you must deposit a minimum of 10,000 $INDEX to receive tokenized stock distributions from The Index protocol.</strong>
           </p>
         </div>
 
@@ -243,7 +243,7 @@ export default function Vaults() {
               </div>
               <h3 className="font-black text-gray-900 text-base mb-0.5 leading-snug">{v.name}</h3>
               <p className="text-[11px] text-gray-400 mb-1">{v.company}</p>
-              <p className="text-xs font-bold text-coral-600 mb-4 tracking-wide">→ {v.target}</p>
+              <p className="text-xs font-bold mb-4 tracking-wide" style={{ color: '#22c55e' }}>{v.target}</p>
               <p className="text-sm text-gray-500 leading-relaxed mb-6">{v.desc}</p>
 
               <div className="border-t border-gray-100 pt-4 mb-5">
@@ -265,7 +265,7 @@ export default function Vaults() {
                 className="w-full bg-gray-900 text-white text-xs font-bold tracking-widest py-3 rounded-xl hover:bg-gray-700 transition-colors"
                 onClick={() => alert('Connect your wallet to enter a vault. Smart contracts coming soon.')}
               >
-                CONNECT TO ENTER
+                CONNECT WALLET
               </button>
             </div>
           ))}
