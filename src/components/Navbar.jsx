@@ -168,25 +168,36 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Right controls */}
+        {/* Desktop countdown — sits between nav links and right controls */}
         <div
+          className="hidden lg:flex items-center gap-1.5"
           style={{
-            display: 'flex', alignItems: 'center', gap: '8px',
             opacity: collapsed ? 0 : 1,
-            maxWidth: collapsed ? 0 : '500px',
+            maxWidth: collapsed ? 0 : '280px',
             overflow: 'hidden',
             transition: 'opacity 0.25s ease, max-width 0.55s cubic-bezier(0.22, 1, 0.36, 1)',
             pointerEvents: collapsed ? 'none' : 'auto',
             flexShrink: 0,
           }}
         >
-          {/* Countdown — desktop: single line, uppercase, nav-link style */}
-          <div className="hidden lg:flex items-center gap-1.5">
-            <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', color: '#9ca3af', whiteSpace: 'nowrap' }}>NEXT CONVERSION:</span>
-            <span style={{ fontSize: '11px', fontWeight: 700, color: '#111827', fontFamily: 'monospace' }}>
-              <Countdown />
-            </span>
-          </div>
+          <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', color: '#9ca3af', whiteSpace: 'nowrap' }}>NEXT CONVERSION:</span>
+          <span style={{ fontSize: '11px', fontWeight: 700, color: '#111827', fontFamily: 'monospace' }}>
+            <Countdown />
+          </span>
+        </div>
+
+        {/* Right controls */}
+        <div
+          style={{
+            display: 'flex', alignItems: 'center', gap: '8px',
+            opacity: collapsed ? 0 : 1,
+            maxWidth: collapsed ? 0 : '200px',
+            overflow: 'hidden',
+            transition: 'opacity 0.25s ease, max-width 0.55s cubic-bezier(0.22, 1, 0.36, 1)',
+            pointerEvents: collapsed ? 'none' : 'auto',
+            flexShrink: 0,
+          }}
+        >
           {/* Countdown — mobile: 2 lines */}
           <div className="flex lg:hidden flex-col items-end" style={{ lineHeight: 1.25 }}>
             <span style={{ fontSize: '10px', fontWeight: 600, color: '#6b7280', whiteSpace: 'nowrap' }}>Next Conversion:</span>

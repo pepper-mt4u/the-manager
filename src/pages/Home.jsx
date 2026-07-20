@@ -107,14 +107,14 @@ const processSteps = [
   },
   {
     n: '03',
-    title: 'When tokenized stock distributions arrive,',
-    body: 'The Manager automatically converts all of your received tokenized stocks into your chosen target asset.',
+    title: 'The Manager Auto-Converts Rewards',
+    body: 'When tokenized stock distributions arrive, The Manager swaps them into your chosen asset automatically.',
     tag: 'AUTO-COMPOUND',
   },
   {
     n: '04',
     title: '$INDEX Protocol Reserve',
-    body: null,
+    body: '2% of all auto-swapped tokenized stocks are used to purchase $INDEX for the protocol reserve.',
     tag: 'INDEX RESERVE',
   },
 ]
@@ -130,13 +130,13 @@ const vaultPreviews = [
     tagColor: 'bg-coral-100 text-coral-700',
   },
   {
-    name: 'SpaceX Vault',
-    target: '+SPCX',
-    desc: 'All tokenized stock distributions are automatically swapped into tokenized SpaceX stock on the Robinhood layer 2.',
+    name: 'USDG Stable Vault',
+    target: '+$USDG',
+    desc: 'All tokenized stock distributions are automatically swapped into USDG, the native stablecoin of the Robinhood layer 2.',
     apy: 'TBA',
     tvl: '$0',
-    tag: 'AUTO-SWAPPED',
-    tagColor: 'bg-blue-100 text-blue-700',
+    tag: 'EARN',
+    tagColor: 'bg-green-100 text-green-700',
   },
   {
     name: 'NVIDIA Vault',
